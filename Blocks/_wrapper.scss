@@ -1,0 +1,148 @@
+.wrapper{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 20px 5px;
+
+  // если 2 товара будет в строке, не понял где найти класс --hide
+  @media(min-width: 1260px) {
+    justify-content: start;
+  }
+ 
+  &__item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 3 * 28px) / 4);
+    border: 1px solid #e2e2e2;
+    padding: 15px 17px 19px 19px;
+
+    @media(max-width: 1259px) {
+      width: calc((100% - 28px) / 2);
+    }
+
+    @media(max-width: 768px) {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__discount-new{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 62px;
+    height: 32px;
+    border-bottom-right-radius: 40px;
+  
+    .icon{
+      margin: auto;
+      font-size: 14px;
+      line-height: 16px;
+      color: #ffffff;
+
+      &_black{
+        font-size: 12.3px;
+        color: #151515;
+      }
+    }
+
+    &_red{
+      background-color: #F30A2B;
+    }
+
+    &_yellow{
+      background-color: #ffd304;
+    }
+  }
+
+  &__img-block{
+    position: relative;
+    width: 100%;
+    padding-bottom: 83%;
+  }
+
+  &__img{
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    width: 84%;
+    height: 84%;
+    object-fit: contain;
+  }
+
+  &__title{
+    font-size: 16px;
+    line-height: 52px;
+    text-transform: uppercase;
+    color: #aeaeae;
+  }
+
+  &__link{
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: #2175cc;
+    margin-bottom: 13px;
+  }
+
+  &__price-buy{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__old-price{
+    font-size: 16px;
+    line-height: 21px;
+    text-transform: uppercase;
+    text-decoration: line-through;
+    color: #aeaeae;
+
+    span{
+      text-transform: none;
+    }
+  }
+
+  &__new-price{
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #272727;
+
+    span{
+      text-transform: none;
+    }
+
+    sup{
+      font-size: 10px;
+    }
+  }
+
+  &__button{
+    display: flex;
+    width: 153px;
+    height: 41px;
+    background-color: #ffd304;
+    font-size: 15px;
+    font-weight: 500;
+
+    span{
+      margin: auto;
+      color: #101010;
+    }
+  }
+}
+
